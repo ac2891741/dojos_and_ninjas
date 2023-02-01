@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>New Ninja</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Edit {{ninja.id}}</h1>
+        <div class="form">
+            
+            <form action="/update" method="POST">
+                <input type="hidden" name="id"  value="{{ninja.id}}">
+                <input type="hidden" name="dojo_id" value="{{ninja.dojo_id}}">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" value="{{ninja.first_name}}">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" value="{{ninja.last_name}}">
+                <label for="age">Age:</label>
+                <input type="number" name="age" value="{{ninja.age}}">
+                <div>
+                    <a href="/">Back to Dojo</a>
+                    <input type="submit" name="submit" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
